@@ -1,0 +1,56 @@
+<project name="TestNGTest" default="postReport" basedir=".">
+	<loadproperties srcFile="build.properties"/>
+	<path id="project.classpath"> 
+		<fileset dir="${root.dir}\${lib.dir}\${selenium}" includes="**/*.jar" />
+		<fileset dir="${root.dir}\${lib.dir}\${testng}" includes="**/*.jar" />
+		<fileset dir="${root.dir}\${lib.dir}\${reportng}" includes="**/*.jar" />
+	</path>
+	<taskdef name="testng" classname="org.testng.TestNGAntTask">
+		<classpath refid="project.classpath"/>
+	</taskdef>
+	<tstamp>
+     	<format property="time.stamp" pattern="${TIMESTAMP_FORMAT1}"/>
+	</tstamp>	
+	<target name="clean">
+		<delete verbose="${verbose-enabled}">
+			<fileset dir="${bin.dir}" includes="**/*.class" />
+		</delete>
+	</target>
+	<target name="compile" depends="clean">
+		<javac srcdir="${src.dir}" 
+			destdir="${bin.dir}" 
+			 	includeantruntime="${include-ant-run-time}"
+					verbose="${verbose-enabled}" 
+						classpathref="project.classpath" />
+	</target>
+	<target name="check">
+	  <condition property="deldir">
+	    <available file="${rsl.dir}/temp" type="dir"/>
+	  </condition>
+	 </target>
+	 <target name="deldir" depends="check" if="deldir">
+	 <delete dir="${rsl.dir}/temp"/>
+	 </target>
+	<target name="runTest" depends="compile,deldir">
+		<testng outputdir="${bin.dir}" 
+			classpathref="project.classpath" 
+				outputDir="${rsl.dir}/temp"
+					useDefaultListeners="false"
+		            	listeners="org.uncommons.reportng.HTMLReporter,org.uncommons.reportng.JUnitXMLReporter">
+			<sysproperty key="org.uncommons.reportng.escape-output" value="false"/>
+			<classpath location="${bin.dir}" />
+			<xmlfileset dir="" includes="${testng.file}"/>
+		</testng>
+	</target>
+	<target name="postReport" depends="runTest">
+		<copydir src="${root.dir}\${res.dir}\jquery\lightbox JS" dest="${rsl.dir}\temp\html" />
+		<replace value="defaultvalue">
+			<fileset dir="${rsl.dir}\temp\html" includes="*results.html" />
+			<replacefilter token="&lt;/script&gt;" value="&lt;/script&gt;&lt;link href=&quot;css/lightbox.css&quot; rel=&quot;stylesheet&quot; /&gt;&lt;script src=&quot;js/jquery-1.11.0.min.js&quot;&gt;&lt;/script&gt;&lt;script src=&quot;js/lightbox.min.js&quot;&gt;&lt;/script&gt;"/>
+		</replace>
+		<mkdir dir="${rsl.dir}\${time.stamp}"/>
+		<move todir="${rsl.dir}\${time.stamp}">
+		   <fileset dir="${rsl.dir}\temp"/>
+		</move>
+	</target>
+</project>
