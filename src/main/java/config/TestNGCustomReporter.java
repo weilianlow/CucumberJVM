@@ -1,4 +1,4 @@
-package config;
+package main.java.config;
 
 import java.awt.*;
 import java.io.File;

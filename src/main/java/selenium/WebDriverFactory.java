@@ -1,9 +1,10 @@
-package selenium;
+package main.java.selenium;
 
-import config.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.*;
 import org.openqa.selenium.ie.*;
+
+import main.java.config.*;
 
 public class WebDriverFactory {
 	WebDriver WD;

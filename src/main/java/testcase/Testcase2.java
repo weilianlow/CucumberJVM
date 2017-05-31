@@ -1,7 +1,8 @@
-package testcase;
+package main.java.testcase;
 
 import org.openqa.selenium.By;
-import config.TestNGCustomReporter;
+
+import main.java.config.TestNGCustomReporter;
 
 public class Testcase2 extends SuperTestCase{
 	public void body() throws Exception{

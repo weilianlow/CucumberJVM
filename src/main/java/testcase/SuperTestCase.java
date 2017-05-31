@@ -1,4 +1,4 @@
-package testcase;
+package main.java.testcase;
 
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
@@ -7,13 +7,13 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import config.TestNGCustomReporter;
-import selenium.*;
+import main.java.config.TestNGCustomReporter;
+import main.java.selenium.*;
 
 public class SuperTestCase {
 	WebDriver WD;
-	@BeforeTest
 	@Parameters({"browserType"})
+	@BeforeTest
 	public void start(String browserType){
 		WD = new WebDriverFactory(browserType).getWebDriver();
 		WD.manage().window().maximize();

@@ -10,28 +10,32 @@
 	</taskdef>
 	<tstamp>
      	<format property="time.stamp" pattern="${TIMESTAMP_FORMAT1}"/>
-	</tstamp>	
-	<target name="clean">
+	</tstamp>
+	<target name="deleteFolder">
+	  <condition property="delbin">
+	    <available file="${bin.dir}" type="dir"/>
+	  </condition>
+	  <condition property="deltemp">
+	    <available file="${rsl.dir}/temp" type="dir"/>
+	  </condition>
+	 </target>	
+	<target name="clean1" depends="deleteFolder" if="delbin">
 		<delete verbose="${verbose-enabled}">
 			<fileset dir="${bin.dir}" includes="**/*.class" />
 		</delete>
 	</target>
-	<target name="compile" depends="clean">
+	<target name="compile" depends="clean1">
+		<mkdir dir="${bin.dir}"/>
 		<javac srcdir="${src.dir}" 
 			destdir="${bin.dir}" 
 			 	includeantruntime="${include-ant-run-time}"
 					verbose="${verbose-enabled}" 
 						classpathref="project.classpath" />
 	</target>
-	<target name="check">
-	  <condition property="deldir">
-	    <available file="${rsl.dir}/temp" type="dir"/>
-	  </condition>
-	 </target>
-	 <target name="deldir" depends="check" if="deldir">
+	 <target name="clean2" depends="deleteFolder" if="deltemp">
 	 <delete dir="${rsl.dir}/temp"/>
 	 </target>
-	<target name="runTest" depends="compile,deldir">
+	<target name="runTest" depends="compile,clean2">
 		<testng outputdir="${bin.dir}" 
 			classpathref="project.classpath" 
 				outputDir="${rsl.dir}/temp"
