@@ -1,14 +1,23 @@
 package main.java.testcase;
 
-import org.openqa.selenium.By;
+import main.java.automationframework.TestNGCustomReporter;
+import main.java.pageobjects.SearchForm;
+import main.java.pageobjects.TopNavigation;
 
-import main.java.config.TestNGCustomReporter;
 
 public class Testcase1 extends SuperTestCase{
-	public void body() throws Exception{
+	public void body() throws Exception {
+		SearchForm SF = new SearchForm(WD);
+		TopNavigation TN = new TopNavigation(WD);
 		WD.get("https://google.com.sg");
-		WD.findElement(By.xpath("//input[@name='q']")).sendKeys("Hello World");
-		TestNGCustomReporter.logPassed("Great!",WD);
+		
+		SF.inputQ.sendKeys("Hello World");
+		Thread.sleep(2000);
+		TestNGCustomReporter.logPassed("Great1!",WD);
+		SF.buttonSearch.click();
 		Thread.sleep(1000);
+		TN.aImages.click();
+		Thread.sleep(2000);
+		TestNGCustomReporter.logPassed("Great2!",WD);
 	}
 }

@@ -1,10 +1,10 @@
-package main.java.selenium;
+package main.java.automationframework;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.*;
 import org.openqa.selenium.ie.*;
 
-import main.java.config.*;
+import main.java.automationframework.*;
 
 public class WebDriverFactory {
 	WebDriver WD;

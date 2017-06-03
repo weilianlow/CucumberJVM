@@ -7,8 +7,8 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import main.java.config.TestNGCustomReporter;
-import main.java.selenium.*;
+import main.java.automationframework.TestNGCustomReporter;
+import main.java.automationframework.WebDriverFactory;
 
 public class SuperTestCase {
 	WebDriver WD;

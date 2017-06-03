@@ -1,4 +1,4 @@
-package main.java.config;
+package main.java.automationframework;
 
 import java.io.FileInputStream;
 import java.io.IOException;
