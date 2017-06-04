@@ -1,4 +1,4 @@
-package main.java.testcase;
+package main.java.testngtestcases;
 
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
@@ -9,6 +9,8 @@ import org.testng.annotations.Test;
 
 import main.java.automationframework.TestNGCustomReporter;
 import main.java.automationframework.WebDriverFactory;
+import main.java.pageobjects.SearchForm;
+import main.java.pageobjects.TopNavigation;
 
 public class SuperTestCase {
 	WebDriver WD;
@@ -18,6 +20,8 @@ public class SuperTestCase {
 		WD = new WebDriverFactory(browserType).getWebDriver();
 		WD.manage().window().maximize();
 		WD.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+		SearchForm SF = new SearchForm(WD);
+		TopNavigation TN = new TopNavigation(WD);
 	}
 	@AfterTest
 	public void end(){

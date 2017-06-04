@@ -1,4 +1,4 @@
-package main.java.testcase;
+package main.java.testngtestcases;
 
 import org.openqa.selenium.By;
 

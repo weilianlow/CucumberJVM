@@ -4,12 +4,12 @@
 	<parameter name="browserType" value="chrome"/>
 	<test name="test1">
 		<classes>
-			<class name="main.java.testcase.Testcase1"/>
+			<class name="main.java.testngtestcases.Testcase1"/>
 		</classes>
 	</test>
 	<test name="test2">
 		<classes>
-			<class name="main.java.testcase.Testcase2"/>
+			<class name="main.java.testngtestcases.Testcase2"/>
 		</classes>
 	</test>
 </suite>

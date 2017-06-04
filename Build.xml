@@ -26,11 +26,17 @@
 	</target>
 	<target name="compile" depends="clean1">
 		<mkdir dir="${bin.dir}"/>
-		<javac srcdir="${src.dir}" 
-			destdir="${bin.dir}" 
+		<javac destdir="${bin.dir}" 
 			 	includeantruntime="${include-ant-run-time}"
 					verbose="${verbose-enabled}" 
-						classpathref="project.classpath" />
+						classpathref="project.classpath">
+		      <src>
+		      	<pathelement location="${src.dir}/main/java/automationframework" /> 
+		      	<pathelement location="${src.dir}/main/java/pageobjects" />
+		         <pathelement location="${src.dir}/main/java/testngtestcases" />
+		         <!-- Need to exclude ${src.dir}/com/foo/bar/quux/dontwant/ -->
+		      </src>
+		</javac>
 	</target>
 	 <target name="clean2" depends="deleteFolder" if="deltemp">
 	 <delete dir="${rsl.dir}/temp"/>

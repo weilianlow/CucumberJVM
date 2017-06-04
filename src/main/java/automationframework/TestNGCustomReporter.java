@@ -1,16 +1,10 @@
 package main.java.automationframework;
 
-import java.awt.*;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
-import javax.imageio.ImageIO;
-
-import java.awt.image.BufferedImage;
-
 import org.testng.Assert;
 import org.testng.Reporter;
 
