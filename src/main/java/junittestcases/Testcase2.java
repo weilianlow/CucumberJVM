@@ -1,14 +1,13 @@
-package main.java.testngtestcases;
+package main.java.junittestcases;
 
 import org.openqa.selenium.By;
-import main.java.automationframework.TestNGCustomReporter;
+import org.junit.Assert;
 
 public class Testcase2 extends SuperTestCase{
 	@Override
 	public void body() throws Exception{
 		WD.get("https://google.com.sg");
 		WD.findElement(By.xpath("//input[@name='qr']")).sendKeys("Hello World");
-		TestNGCustomReporter.logPassed("Great!",WD);
-		Thread.sleep(1000);
+		Assert.assertEquals("Great1!", "Great1!");
 	}
 }

@@ -1,6 +1,6 @@
-package main.java.testngtestcases;
+package main.java.junittestcases;
 
-import main.java.automationframework.TestNGCustomReporter;
+import org.junit.Assert;
 import main.java.pageobjects.SearchForm;
 import main.java.pageobjects.TopNavigation;
 
@@ -10,11 +10,11 @@ public class Testcase1 extends SuperTestCase{
 		WD.get("https://google.com.sg");
 		SearchForm.inputQ(WD).sendKeys("Hello World");
 		Thread.sleep(2000);
-		TestNGCustomReporter.logPassed("Great1!",WD);
+		Assert.assertEquals("Great1!","Great1!");
 		SearchForm.buttonSearch(WD).click();
 		Thread.sleep(1000);
 		TopNavigation.aImages(WD).click();
 		Thread.sleep(2000);
-		TestNGCustomReporter.logPassed("Great2!",WD);
+		Assert.assertEquals("Great2!","Great2!");
 	}
 }
