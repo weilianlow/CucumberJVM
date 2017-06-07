@@ -16,11 +16,11 @@
 #""
 ## (Comments)
 #Sample Feature Definition Template
-@tag
+@tag1
 Feature: Google Page Navigation
   I want to use this template for my feature file
 
-  @tag1
+  @tag1child1
   Scenario Outline: Google Search
     Given User is at Page "<url1>"
     When User enters "<value>" in search textfield
@@ -29,5 +29,5 @@ Feature: Google Page Navigation
     Then images will be shown in grid format
 
     Examples: 
-      | url1                      | value       | 
-      | https://www.google.com.sg | Hello World | 
+      | url1                      | value       |
+      | https://www.google.com.sg | Hello World |
