@@ -1,0 +1,56 @@
+<project name="TestNGTest" default="runCucumber" basedir=".">
+	<loadproperties srcFile="build.properties"/>
+	<path id="project.classpath"> 
+		<fileset dir="${root.dir}/${lib.dir}/${selenium}" includes="**/*.jar" />
+		<fileset dir="${root.dir}/${lib.dir}/${cucumber}" includes="**/*.jar" />
+		<fileset dir="${root.dir}/${lib.dir}/${testng}" includes="**/*.jar" />
+		<fileset dir="${root.dir}/${lib.dir}/${junit}" includes="**/*.jar" />
+	</path>
+	<tstamp>
+     	<format property="time.stamp" pattern="${TIMESTAMP_FORMAT1}"/>
+	</tstamp>
+	<target name="deleteFolder">
+	  <condition property="delbin">
+	    <available file="${bin.dir}" type="dir"/>
+	  </condition>
+	  <condition property="deltemp">
+	    <available file="${rsl.dir}/temp" type="dir"/>
+	  </condition>
+	 </target>	
+	<target name="clean1" depends="deleteFolder" if="delbin">
+		<delete verbose="${verbose-enabled}">
+			<fileset dir="${bin.dir}" includes="**/*.class" />
+		</delete>
+	</target>
+	<target name="compile" depends="clean1">
+		<mkdir dir="${bin.dir}"/>
+		<javac destdir="${bin.dir}" 
+			 	includeantruntime="${include-ant-run-time}"
+					verbose="${verbose-enabled}" 
+						classpathref="project.classpath">
+		      <src>
+		      	<pathelement location="${src.dir}/test/java/automationframework" /> 
+		      	<pathelement location="${src.dir}/test/java/pageobjects" />
+		      	<pathelement location="${src.dir}/test/java/cucumbertestcases" /> 
+		      </src>
+		</javac>
+	</target>
+	 <target name="clean2" depends="deleteFolder" if="deltemp">
+	 <delete dir="${rsl.dir}/temp"/>
+	 </target>
+	<target name="runCucumber" depends="compile,clean2">
+			<mkdir dir="${rsl.dir}/${time.stamp}"/>
+		  <junit>
+		    <classpath refid="project.classpath" />
+		  	<classpath> 
+		  		<pathelement path="${bin.dir}"  />
+		    </classpath>
+		    <formatter type="xml"/>
+		    <batchtest fork="yes" todir="${rsl.dir}/${time.stamp}">
+		       <fileset dir="${bin.dir}">
+		       	<include name="**/cucumbertestcases/TestSuite*class" />
+		       </fileset>
+		    </batchtest>
+		  </junit>
+	</target>
+</project>
