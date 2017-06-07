@@ -24,9 +24,10 @@ Feature: Google Page Navigation
   Scenario Outline: Google Search
     Given User is at Page "<url1>"
     When User enters "<value>" in search textfield
-    When User clicks on search button
-    Then User will be redirected to Page "<url2>"
+    And User clicks on search button
+    And User clicks on images hyperlink
+    Then images will be shown in grid format
 
     Examples: 
-      | url1                      | value       | url2                                     |
-      | https://www.google.com.sg | Hello World | https://www.google.com.sg/#q=Hello+World |
+      | url1                      | value       | 
+      | https://www.google.com.sg | Hello World | 

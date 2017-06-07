@@ -10,6 +10,7 @@ import cucumber.api.java.After;
 import cucumber.api.java.en.*;
 import test.java.automationframework.WebDriverFactory;
 import test.java.pageobjects.SearchForm;
+import test.java.pageobjects.TopNavigation;
 
 public class StepDefinitionGoogleNavigation {
 	WebDriver WD;
@@ -32,13 +33,16 @@ public class StepDefinitionGoogleNavigation {
 	public void user_enters_in_search_textfield(String arg1) throws Throwable {
 		SearchForm.inputQ(WD).sendKeys(arg1);
 	}
-	@When("^User clicks on search button$")
+	@And("^User clicks on search button$")
 	public void user_clicks_on_search_button() throws Throwable {
 		SearchForm.buttonSearch(WD).click();
 	}
-	@Then("^User will be redirected to Page \"([^\"]*)\"$")
-	public void user_will_be_redirected_to_Page(String arg1) throws Throwable {
-		//Compare getURL with https://www.google.com.sg/search?q=Hello+World
+	@And("^User clicks on images hyperlink$")
+	public void userClicksOnImagesHyperlink() throws Throwable {
+		TopNavigation.aImages(WD).click();
+	}
+	@Then("^images will be shown in grid format$")
+	public void imagesWillBeShownInGridFormat() throws Throwable {
 		Thread.sleep(5000);
 	}
 }
