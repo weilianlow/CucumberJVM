@@ -8,6 +8,7 @@
 	<name>seleniummavendemo</name>
 	<url>http://maven.apache.org</url>
 	<build>
+		<defaultGoal>install</defaultGoal>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
