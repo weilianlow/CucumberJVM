@@ -52,7 +52,7 @@ The res folder contains 2 other sub folders,<br/>
 # Deploying Build Scripts in Jenkins
 Make sure that the appropriate properties are amended accordingly in the build.properties file, depending on the location of your Jenkins workspace.
 <b>Source Code Management</b><br/>
-Under the Source Code Management tab > Repositories, enter the Project url https://github.com/weilianlow/SeleniumDemo.git<br/>
+Under the Source Code Management tab > Repositories, enter the <a href ="https://github.com/weilianlow/SeleniumDemo.git">Project url</a><br/>
 <b>Build</b><br/>
 - For ANT Scripts, click on Add build step button, and select the option 'Invoke Ant'. Enter the Build File name in the Build File textbox.
 - For MAVEN Scripts, click on Add build step button, and select the option 'Execute Windows batch command'. Enter the following command 'mvn clean test -Dmaven.source=pom-<cucumber/junit/testng>.xml' in the Command textbox.
