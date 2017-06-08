@@ -50,9 +50,9 @@ The res folder contains 2 other sub folders,<br/>
 - webdriver folder contains web drivers for different web browsers. They are generally used by Selenium library to interface between the actual browser.
 
 # Deploying Build Scripts in Jenkins
-Make sure that the appropriate properties are amended accordingly in the build.properties file, depending on the location of your Jenkins workspace.<br/>
+Make sure that the appropriate properties are amended accordingly in the build.properties file, depending on the location of your Jenkins workspace.<p/>
 <b>Source Code Management</b><br/>
-Under the Source Code Management tab > Repositories, enter the <a href ="https://github.com/weilianlow/SeleniumDemo.git">Project url</a><br/>
+Under the Source Code Management tab > Repositories, enter the <a href ="https://github.com/weilianlow/SeleniumDemo.git">Project url</a><p/>
 <b>Build</b><br/>
 - For ANT Scripts, click on Add build step button, and select the option 'Invoke Ant'. Enter the Build File name in the Build File textbox.
 - For MAVEN Scripts, click on Add build step button, and select the option 'Execute Windows batch command'. Enter the following command 'mvn clean test -Dmaven.source=pom-<cucumber/junit/testng>.xml' in the Command textbox.
