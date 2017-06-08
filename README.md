@@ -54,5 +54,5 @@ Make sure that the appropriate properties are amended accordingly in the build.p
 <b>Source Code Management</b><br/>
 Under the Source Code Management tab > Repositories, enter the <a href ="https://github.com/weilianlow/SeleniumDemo.git">Project url</a><p/>
 <b>Build</b><br/>
-- For ANT Scripts, click on Add build step button, and select the option 'Invoke Ant'. Enter the Build File name in the Build File textbox.
+- For ANT Scripts, click on Add build step button, and select the option 'Invoke Ant'. Enter the following Build File name 'build-<cucumber/junit/testng>.xml' in the Build File textbox.
 - For MAVEN Scripts, click on Add build step button, and select the option 'Execute Windows batch command'. Enter the following command 'mvn clean test -Dmaven.source=pom-<cucumber/junit/testng>.xml' in the Command textbox.
