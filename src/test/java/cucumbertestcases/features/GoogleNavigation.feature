@@ -20,26 +20,27 @@
 Feature: Google Page Navigation
   I want to use this template for my feature file
 
+  Background: 
+		Given User is at Page "https://www.google.com.sg"
+
   @seleniumie
   Scenario Outline: Google Search 1
-    Given User is at Page "<url1>"
     When User enters "<value>" in search textfield
     And User clicks on search button
     And User clicks on images hyperlink
     Then images will be shown in grid format
 
     Examples: 
-      | url1                      | value       |
-      | https://www.google.com.sg | Hello World |
+      | value       |
+      | Hello World |
  
   @seleniumchrome
   Scenario Outline: Google Search 2
-    Given User is at Page "<url1>"
     When User enters "<value>" in search textfield
     And User clicks on search button
     And User clicks on images hyperlink
     Then images will be shown in grid format
 
     Examples: 
-      | url1                      | value       |
-      | https://www.google.com.sg | Hello World |
+      | value       |
+      | Hello World |

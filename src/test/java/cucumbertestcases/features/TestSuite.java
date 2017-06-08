@@ -8,7 +8,8 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(features="src/test/java/cucumbertestcases",
 					plugin ={"pretty" , "html:C:/result/temp2"},
 					tags ={"@regression"},
-					glue="test.java.cucumbertestcases.steps") 
+					glue="test.java.cucumbertestcases.steps")
+					//dryRun = true
 					//monochrome - Display the console output in a much readable ways
 					//strict - if set to true, this will fail any scenarios with pending steps 
 public class TestSuite {}

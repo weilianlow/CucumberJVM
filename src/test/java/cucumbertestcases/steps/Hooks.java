@@ -1,8 +1,7 @@
 package test.java.cucumbertestcases.steps;
-
-import java.util.concurrent.TimeUnit;
 import cucumber.api.java.Before;
 import cucumber.api.java.After;
+import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import test.java.automationframework.WebDriverFactory;
 
@@ -28,4 +27,3 @@ public class Hooks{
 		WD.quit();
 	}
 }
-
