@@ -1,8 +1,8 @@
 # SeleniumDemo
-Selenium demo is a project that is dedicated to demostrate continuous integration testing using
-- Build Automation Tools: Apache ANT and Apache Maven<br/>
-- Test Driven Development (TDD): Junit and TestNG<br/>
-- Behavioural Driven Development (BDD): Cucumber-JVM using Gherkins language and Junit Framework<p/>
+SeleniumDemo is a project that is dedicated to demostrate continuous integration testing using
+- <b>Build Automation Tools:</b> Apache ANT and Apache Maven<br/>
+- <b>Test Driven Development (TDD):</b> Junit and TestNG<br/>
+- <b>Behavioural Driven Development (BDD):</b> Cucumber-JVM using Gherkins language and Junit Framework<p/>
 <b>Note:</b> Gradle will be included in future releases.
 
 # How are files being organized?
@@ -31,18 +31,19 @@ Selenium demo is a project that is dedicated to demostrate continuous integratio
 &nbsp;&nbsp;&nbsp;pom-testng.xml<p>
 
 <b>Automation Framework</b><br/>
-All automation related classes are located in test.java.automationframework package. Future releases of DAO factory library will be created in this package to access database, read excel/CSV/JSON files.<p/>
+All automation related classes are located in <i>test.java.automationframework</i> package. <p/>
+<b>Note:</b> Future releases of DAO factory library will be created in this package to access database, read excel/CSV/JSON files.<p/>
 
 <b>Object Repository</b><br/>
-The Page Objects are located in test.java.pageobjects package.<p/>
+The Page Objects are located in <i>test.java.pageobjects</i> package.<p/>
 
 <b>Test Suite</b><br/>
-For Junit/TestNG/Cucumber test cases, they are located in test.java.<cucumber/junit/testng>testcases package.<p/>
+For Junit/TestNG/Cucumber test cases, they are located in <i>test.java.<cucumber/junit/testng>testcases</i> package.<p/>
 
 <b>Build Scripts</b><br/>
 The build scripts come in 2 flavours, ANT or MAVEN. Please install ANT or MAVEN in your deployment machine before running the scripts.<br/>
-- For ANT scripts, they are name as build-<cucumber/junit/testng>.xml. The lib folder housed dependency libraries for the ANT script.<br/>
-- For MAVEN scripts, they are name as pom-<cucumber/junit/testng>.xml. The depencency libaries are housed in the user's .M2 folder.<br/>
+- For ANT scripts, they are named as <i>build-<cucumber/junit/testng>.xml</i>. The lib folder housed dependency libraries for the ANT script.<br/>
+- For MAVEN scripts, they are named as <i>pom-<cucumber/junit/testng>.xml</i>. The depencency libaries are housed in the user's <i>.M2</i> folder.<br/>
 
 <b>Resource Folder</b><br/>
 The res folder contains 2 other sub folders,<br/>
@@ -54,5 +55,5 @@ Make sure that the appropriate properties are amended accordingly in the build.p
 <b>Source Code Management</b><br/>
 Under the Source Code Management tab > Repositories, enter the <a href ="https://github.com/weilianlow/SeleniumDemo.git">Project url</a><p/>
 <b>Build</b><br/>
-- For ANT Scripts, click on Add build step button, and select the option 'Invoke Ant'. Enter the following Build File name 'build-<cucumber/junit/testng>.xml' in the Build File textbox.
-- For MAVEN Scripts, click on Add build step button, and select the option 'Execute Windows batch command'. Enter the following command 'mvn clean test -Dmaven.source=pom-<cucumber/junit/testng>.xml' in the Command textbox.
+- For ANT Scripts, click on Add build step button, and select the option <i>Invoke Ant</i>. Enter the following Build File name <i>build-<cucumber/junit/testng>.xml</i> in the Build File textbox.
+- For MAVEN Scripts, click on Add build step button, and select the option <i>Execute Windows batch command</i>. Enter the following command <i>mvn clean test -Dmaven.source=pom-<cucumber/junit/testng>.xml</i> in the Command textbox.
