@@ -7,7 +7,7 @@ Selenium demo is a project that is dedicated to demostrate continuous integratio
 
 # How are files being organized?
 <b>SeleniumDemo</b><br/>
-&nbsp;&nbsp;&nbsp;src<br/>
+&nbsp;&nbsp;&nbsp;<b>src</b><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;test.java.automationframework<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;test.java.cucumbertestcases<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;test.java.junittestcases<br/>
@@ -27,4 +27,18 @@ Selenium demo is a project that is dedicated to demostrate continuous integratio
 &nbsp;&nbsp;&nbsp;build.properties<br/>
 &nbsp;&nbsp;&nbsp;pom-cucumber.xml<br/>
 &nbsp;&nbsp;&nbsp;pom-junit.xml<br/>
-&nbsp;&nbsp;&nbsp;pom-testng.xml<br/>
+&nbsp;&nbsp;&nbsp;pom-testng.xml<p>
+
+<b>Automation Framework</b>
+All automation related classes are located in test.java.automationframework package. Future releases of DAO factory library will be created in this package to access database, read excel/CSV/JSON files.<p/>
+
+<b>Object Repository</b>
+The Page Objects are located in test.java.pageobjects package.<p/>
+
+<b>Test Suite</b>
+For Junit/TestNG/Cucumber test cases, they are located in test.java.<cucumber/junit/testng>testcases package.<p/>
+
+<b>Build Scripts</b>
+The build scripts come in 2 flavours, ANT or MAVEN. Please install ANT or MAVEN in your deployment machine before running the scripts.<br/>
+- For ANT scripts, they are name as build-<cucumber/junit/testng>.xml
+- For MAVEN scripts, they are name as pom-<cucumber/junit/testng>.xml
