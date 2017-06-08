@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 import test.java.automationframework.TestNGCustomReporter;
 import test.java.automationframework.WebDriverFactory;
 
-public class SuperTestCase {
+public class Hooks {
 	WebDriver WD;
 	@Parameters({"browserType"})
 	@BeforeTest

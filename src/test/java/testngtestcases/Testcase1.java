@@ -4,7 +4,7 @@ import test.java.automationframework.TestNGCustomReporter;
 import test.java.pageobjects.SearchForm;
 import test.java.pageobjects.TopNavigation;
 
-public class Testcase1 extends SuperTestCase{
+public class Testcase1 extends Hooks{
 	@Override
 	public void body() throws Exception {
 		WD.get("https://google.com.sg");

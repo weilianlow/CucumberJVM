@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 
 import test.java.automationframework.TestNGCustomReporter;
 
-public class Testcase2 extends SuperTestCase{
+public class Testcase2 extends Hooks{
 	@Override
 	public void body() throws Exception{
 		WD.get("https://google.com.sg");
