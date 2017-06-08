@@ -1,5 +1,5 @@
 # SeleniumDemo
-Selenium demo is a project that is dedicated to demostrate continuous integration testing with using
+Selenium demo is a project that is dedicated to demostrate continuous integration testing using
 - Build Automation Tools: Apache ANT and Apache Maven<br/>
 - Test Driven Development (TDD): Junit and TestNG<br/>
 - Behavioural Driven Development (BDD): Cucumber-JVM using Gherkins language and Junit Framework<br/>
