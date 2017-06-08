@@ -18,7 +18,8 @@
 					<testExcludes>
 						<exclude>**/TestNGCustomReporter.java</exclude>
 						<exclude>**/testngtestcases/*.java</exclude>
-						<exclude>**/cucumbertestcases/*.java</exclude>
+						<exclude>**/cucumbertestcases/**/*.java</exclude>
+						<exclude>**/junittestcases/TestSuite.java</exclude>
 					</testExcludes>
 					<source>1.8</source>
 					<target>1.8</target>

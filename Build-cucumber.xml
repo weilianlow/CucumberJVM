@@ -1,4 +1,4 @@
-<project name="TestNGTest" default="runCucumber" basedir=".">
+<project name="CucumberTest" default="runCucumber" basedir=".">
 	<loadproperties srcFile="build.properties"/>
 	<path id="project.classpath"> 
 		<fileset dir="${root.dir}/${lib.dir}/${selenium}" includes="**/*.jar" />
@@ -48,7 +48,7 @@
 		    <formatter type="xml"/>
 		    <batchtest fork="yes" todir="${rsl.dir}/${time.stamp}">
 		       <fileset dir="${bin.dir}">
-		       	<include name="**/cucumbertestcases/TestSuite*class" />
+		       	<include name="**/cucumbertestcases/**/TestSuite*class" />
 		       </fileset>
 		    </batchtest>
 		  </junit>

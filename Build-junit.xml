@@ -1,4 +1,4 @@
-<project name="TestNGTest" default="runJUnit" basedir=".">
+<project name="JunitTest" default="runJunit" basedir=".">
 	<loadproperties srcFile="build.properties"/>
 	<path id="project.classpath"> 
 		<fileset dir="${root.dir}/${lib.dir}/${selenium}" includes="**/*.jar" />
@@ -37,7 +37,7 @@
 	 <target name="clean2" depends="deleteFolder" if="deltemp">
 	 <delete dir="${rsl.dir}/temp"/>
 	 </target>
-	<target name="runJUnit" depends="compile,clean2">
+	<target name="runJunit" depends="compile,clean2">
 			<mkdir dir="${rsl.dir}/${time.stamp}"/>
 		  <junit>
 		    <classpath refid="project.classpath" />

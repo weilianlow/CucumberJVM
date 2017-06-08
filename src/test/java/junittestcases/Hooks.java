@@ -10,7 +10,7 @@ import org.junit.After;
 import org.junit.Test;
 import org.junit.Assert;
 
-public class SuperTestCase {
+public class Hooks {
 	WebDriver WD;
 	@Before
 	public void start(){

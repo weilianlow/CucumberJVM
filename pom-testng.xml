@@ -17,7 +17,7 @@
 				<configuration>
 					<testExcludes>
 						<exclude>**/junittestcases/*.java</exclude>
-						<exclude>**/cucumbertestcases/*.java</exclude>
+						<exclude>**/cucumbertestcases/**/*.java</exclude>
 					</testExcludes>
 					<source>1.8</source>
 					<target>1.8</target>
