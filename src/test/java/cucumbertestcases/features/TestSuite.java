@@ -8,7 +8,7 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(features="src/test/java/cucumbertestcases",
 					plugin = {"pretty",
 							"json:target/cucumber.json",
-							"html:target/cucumber-report-html"},
+							"html:target/site/cucumber-pretty"},
 					tags ={"@regression"},
 					glue="test.java.cucumbertestcases.steps",
 					monochrome = true)
