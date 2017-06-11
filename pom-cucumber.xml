@@ -8,7 +8,6 @@
 	<name>seleniummavendemo</name>
 	<url>http://maven.apache.org</url>
 	<build>
-		<defaultGoal>install</defaultGoal>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -22,7 +21,7 @@
 					</testExcludes>
 					<source>1.8</source>
 					<target>1.8</target>
-					<printSummary>true</printSummary>
+					<!--<printSummary>true</printSummary>-->
 				</configuration>
 			</plugin>
 			<plugin>
@@ -30,8 +29,28 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.19.1</version>
 				<configuration>
-					<printSummary>true</printSummary>
+					<testFailureIgnore>true</testFailureIgnore>
+					<!--<printSummary>true</printSummary>-->
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>net.masterthought</groupId>
+				<artifactId>maven-cucumber-reporting</artifactId>
+				<version>3.8.0</version>
+				<executions>
+					<execution>
+						<id>execution</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<projectName>Wei Lian Test Automation</projectName>
+							<outputDirectory>${project.build.directory}/cucumber-report-html</outputDirectory>
+							<outputDirectory>${project.build.directory}/cucumber-report-json</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
@@ -72,6 +91,12 @@
 			<groupId>org.picocontainer</groupId>
 			<artifactId>picocontainer</artifactId>
 			<version>2.15</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/net.masterthought/maven-cucumber-reporting -->
+		<dependency>
+			<groupId>net.masterthought</groupId>
+			<artifactId>maven-cucumber-reporting</artifactId>
+			<version>3.8.0</version>
 		</dependency>
 	</dependencies>
 </project>

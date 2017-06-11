@@ -11,7 +11,6 @@ public class StepDefinitionGoogleNavigation{
 	
 	@Given("^User is at Page \"([^\"]*)\"$")
 	public void user_is_at_Page(String arg1) throws Throwable {
-		System.out.println("Zhongren Ma go eat shit!");
 		base.WD.get(arg1);
 	}
 	@When("^User enters \"([^\"]*)\" in search textfield$")
