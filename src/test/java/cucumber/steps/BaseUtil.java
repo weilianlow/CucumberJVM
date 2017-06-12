@@ -1,4 +1,4 @@
-package test.java.cucumbertestcases.steps;
+package test.java.cucumber.steps;
 
 import org.openqa.selenium.*;
 

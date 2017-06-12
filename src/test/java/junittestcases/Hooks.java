@@ -3,7 +3,7 @@ package test.java.junittestcases;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 
-import test.java.automationframework.WebDriverFactory;
+import test.java.automationframework.GenericWebDriverFactory;
 
 import org.junit.Before;
 import org.junit.After;
@@ -14,7 +14,7 @@ public class Hooks {
 	WebDriver WD;
 	@Before
 	public void start(){
-		WD = new WebDriverFactory("chrome").getWebDriver();
+		WD = new GenericWebDriverFactory("chrome").getWebDriver();
 		WD.manage().window().maximize();
 		WD.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
 	}

@@ -1,4 +1,4 @@
-package test.java.cucumbertestcases.steps;
+package test.java.cucumber.steps;
 import cucumber.api.java.en.*;
 import test.java.pageobjects.SearchForm;
 import test.java.pageobjects.TopNavigation;

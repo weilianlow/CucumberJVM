@@ -4,16 +4,16 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.*;
 import org.openqa.selenium.ie.*;
 
-public class WebDriverFactory {
+public class GenericWebDriverFactory {
 	WebDriver WD;
-	public WebDriverFactory(String choice){
+	public GenericWebDriverFactory(String choice){
 		switch (choice.toLowerCase()){
 			case "chrome":
-				System.setProperty("webdriver.chrome.driver",Props.getProperty("CHROME_DRIVER_SERVER_PATH"));
+				System.setProperty("webdriver.chrome.driver",GenericProps.getProperty("CHROME_DRIVER_SERVER_PATH"));
 				WD = new ChromeDriver();
 				break;
 			case "ie":
-				System.setProperty("webdriver.ie.driver",Props.getProperty("IE_DRIVER_SERVER_PATH"));
+				System.setProperty("webdriver.ie.driver",GenericProps.getProperty("IE_DRIVER_SERVER_PATH"));
 				WD = new InternetExplorerDriver();
 				break;
 		}

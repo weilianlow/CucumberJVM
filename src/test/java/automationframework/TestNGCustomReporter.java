@@ -20,8 +20,8 @@ public  class TestNGCustomReporter {
 		temp = "[Passed] Step-" + (++stepNumber) + ": " + message;
 		temp = temp.replace("\"", "&quot;").replace("'", "&#39;");
 		
-		if (Boolean.parseBoolean(Props.getProperty("SCREENSHOT_ENABLED_PASSED")))
-			Reporter.log("<a href='" + captureScreenshot(Props.getProperty("rsl.dir") + "\\temp\\img",WD)
+		if (Boolean.parseBoolean(GenericProps.getProperty("SCREENSHOT_ENABLED_PASSED")))
+			Reporter.log("<a href='" + captureScreenshot(GenericProps.getProperty("rsl.dir") + "\\temp\\img",WD)
 						 + "' data-lightbox='aaa' data-title='" + temp + "'>" + temp + "</a><br/>\n");
 		else
 			Reporter.log(temp + "<br/>\n");
@@ -31,8 +31,8 @@ public  class TestNGCustomReporter {
 		temp = "[Failed] Step-" + (++stepNumber) + ": " + message;
 		temp = temp.replace("\"", "&quot;").replace("'", "&#39;");
 		
-		if (Boolean.parseBoolean(Props.getProperty("SCREENSHOT_ENABLED_FAILED")))
-			Reporter.log("<a href='" + captureScreenshot(Props.getProperty("rsl.dir") + "\\temp\\img",WD)
+		if (Boolean.parseBoolean(GenericProps.getProperty("SCREENSHOT_ENABLED_FAILED")))
+			Reporter.log("<a href='" + captureScreenshot(GenericProps.getProperty("rsl.dir") + "\\temp\\img",WD)
 						 + "' data-lightbox='aaa' data-title='" + temp + "'>" + temp + "</a><br/>\n");
 		else
 			Reporter.log(temp + "<br/>\n");
@@ -44,8 +44,8 @@ public  class TestNGCustomReporter {
 		temp = "[Done] Step-" + (++stepNumber) + ": " + message;
 		temp = temp.replace("\"", "&quot;").replace("'", "&#39;");
 		
-		if (Boolean.parseBoolean(Props.getProperty("SCREENSHOT_ENABLED_DONE")))
-			Reporter.log("<a href='" + captureScreenshot(Props.getProperty("rsl.dir") + "\\temp\\img",WD)
+		if (Boolean.parseBoolean(GenericProps.getProperty("SCREENSHOT_ENABLED_DONE")))
+			Reporter.log("<a href='" + captureScreenshot(GenericProps.getProperty("rsl.dir") + "\\temp\\img",WD)
 						 + "' data-lightbox='aaa' data-title='" + temp + "'>" + temp + "</a><br/>\n");
 		else
 			Reporter.log(temp + "<br/>\n");
@@ -55,7 +55,7 @@ public  class TestNGCustomReporter {
 		File dir = new File(imgFolder);
 		if (!dir.exists()) dir.mkdir();
 		File scrFile = ((TakesScreenshot)WD).getScreenshotAs(OutputType.FILE);
-    	String imgName = new SimpleDateFormat(Props.getProperty("TIMESTAMP_FORMAT2")).format(new Date()) + "_" + stepNumber + "." + Props.getProperty("IMG_TYPE");
+    	String imgName = new SimpleDateFormat(GenericProps.getProperty("TIMESTAMP_FORMAT2")).format(new Date()) + "_" + stepNumber + "." + GenericProps.getProperty("IMG_TYPE");
     	FileUtils.copyFile(scrFile, new File(imgFolder,imgName));
 		return "..\\img\\" + imgName;
 	}

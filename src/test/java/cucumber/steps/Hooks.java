@@ -1,9 +1,9 @@
-package test.java.cucumbertestcases.steps;
+package test.java.cucumber.steps;
 import cucumber.api.java.Before;
 import cucumber.api.java.After;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
-import test.java.automationframework.WebDriverFactory;
+import test.java.automationframework.GenericWebDriverFactory;
 
 public class Hooks {
 	//public static WebDriver WD;
@@ -16,14 +16,14 @@ public class Hooks {
 	
 	@Before("@seleniumchrome")
 	public void seleniumchrome(){
-		base.WD = new WebDriverFactory("chrome").getWebDriver();
+		base.WD = new GenericWebDriverFactory("chrome").getWebDriver();
 		base.WD.manage().window().maximize();
 		base.WD.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
 	}
 	
 	@Before("@seleniumie")
 	public void seleniumie(){
-		base.WD = new WebDriverFactory("ie").getWebDriver();
+		base.WD = new GenericWebDriverFactory("ie").getWebDriver();
 		base.WD.manage().window().maximize();
 		base.WD.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
 	}

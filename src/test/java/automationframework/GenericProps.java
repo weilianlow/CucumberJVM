@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-public class Props {
+public class GenericProps {
 	static Properties prop;
 	public static void init(){
 		if (prop != null) return;

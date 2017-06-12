@@ -1,4 +1,4 @@
-package test.java.cucumbertestcases.features;
+package test.java.cucumber.features;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;

@@ -8,14 +8,14 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import test.java.automationframework.TestNGCustomReporter;
-import test.java.automationframework.WebDriverFactory;
+import test.java.automationframework.GenericWebDriverFactory;
 
 public class Hooks {
 	WebDriver WD;
 	@Parameters({"browserType"})
 	@BeforeTest
 	public void start(String browserType){
-		WD = new WebDriverFactory(browserType).getWebDriver();
+		WD = new GenericWebDriverFactory(browserType).getWebDriver();
 		WD.manage().window().maximize();
 		WD.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
 	}
