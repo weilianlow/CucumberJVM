@@ -32,7 +32,7 @@ SeleniumDemo is a project that is dedicated to demostrate continuous integration
 &nbsp;&nbsp;&nbsp;pom-testng.xml<p>
 
 <b>Automation Framework</b><br/>
-All automation related classes are located in <i>test.java.automationframework</i> package. <p/>
+All automation related classes are located in <i>test.java.automationframework</i> package. <br/>
 <b>Note:</b> Future releases of DAO factory library will be created in this package to access database, read excel/CSV/JSON files.<p/>
 
 <b>Object Repository</b><br/>
@@ -45,12 +45,12 @@ For cucumber test cases, they are located in <i>test.java.cucumber.features</i> 
 <b>Build Scripts</b><br/>
 The build scripts come in 2 flavours, ANT or MAVEN. Please install ANT or MAVEN in your deployment machine before running the scripts.<br/>
 - For ANT scripts, they are named as <i>build-<cucumber/junit/testng>.xml</i>. The lib folder housed dependency libraries for the ANT script.<br/>
-- For MAVEN scripts, they are named as <i>pom-<cucumber/junit/testng>.xml</i>. The depencency libaries are housed in the user's <i>.M2</i> folder.<br/>
+- For MAVEN scripts, they are named as <i>pom-<cucumber/junit/testng>.xml</i>. The depencency libaries are housed in the user's <i>.M2</i> folder.<p/>
 
 <b>Resource Folder</b><br/>
 The res folder contains 2 other sub folders,<br/>
 - jquery folder contains neccessary files to enhance TestNG's report using ReportNG, jquery and lightbox JS.
-- webdriver folder contains web drivers for different web browsers. They are generally used by Selenium library to interface between the actual browser.
+- webdriver folder contains web drivers for different web browsers. They are generally used by Selenium library to interface between the actual browser.<p/>
 
 # Deploying Build Scripts in Jenkins
 Make sure that the appropriate properties are amended accordingly in the build.properties file, depending on the location of your Jenkins workspace.<p/>
