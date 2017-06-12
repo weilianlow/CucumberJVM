@@ -2,8 +2,8 @@
 	<loadproperties srcFile="build.properties"/>
 	<path id="project.classpath"> 
 		<fileset dir="${root.dir}/${lib.dir}/${selenium}" includes="**/*.jar" />
-		<fileset dir="${root.dir}/${lib.dir}/${testng}" includes="**/*.jar" />
 		<fileset dir="${root.dir}/${lib.dir}/${junit}" includes="**/*.jar" />
+		<fileset dir="${root.dir}/${lib.dir}/${testng}" includes="**/*.jar" />
 	</path>
 	<tstamp>
      	<format property="time.stamp" pattern="${TIMESTAMP_FORMAT1}"/>
@@ -47,7 +47,7 @@
 		    <formatter type="xml"/>
 		    <batchtest fork="yes" todir="${rsl.dir}/${time.stamp}">
 		       <fileset dir="${bin.dir}">
-		       	<include name="**/junittestcases/Testcase*class" />
+					<include name="**/junittestcases/TestSuite*class" />
 		       </fileset>
 		    </batchtest>
 		  </junit>
