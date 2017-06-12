@@ -1,15 +1,16 @@
 # SeleniumDemo
 SeleniumDemo is a project that is dedicated to demostrate continuous integration testing using
 - <b>Build Automation Tools:</b> Apache ANT and Apache Maven<br/>
+<b>Note:</b> Gradle will be included in future releases.<br/>
 - <b>Test Driven Development (TDD):</b> Junit and TestNG<br/>
-- <b>Behavioural Driven Development (BDD):</b> Cucumber-JVM using Gherkins language and Junit Framework<p/>
-<b>Note:</b> Gradle will be included in future releases.
+- <b>Behavioural Driven Development (BDD):</b> Cucumber-JVM using Gherkins language and Junit Framework<br/>
 
 # How are files being organized?
 <b>SeleniumDemo</b><br/>
 &nbsp;&nbsp;&nbsp;<b>src</b><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;test.java.automationframework<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;test.java.cucumbertestcases<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;test.java.cucumber.features<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;test.java.cucumber.steps<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;test.java.junittestcases<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;test.java.pageobjects<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;test.java.testngtestcases<br/>
@@ -38,7 +39,8 @@ All automation related classes are located in <i>test.java.automationframework</
 The Page Objects are located in <i>test.java.pageobjects</i> package.<p/>
 
 <b>Test Suite</b><br/>
-For Junit/TestNG/Cucumber test cases, they are located in <i>test.java.<cucumber/junit/testng>testcases</i> package.<p/>
+For Junit/TestNG test cases, they are located in <i>test.java.<junit/testng>testcases</i> package.<br/>
+For cucumber test cases, they are located in <i>test.java.cucumber.features</i> package.<p/>
 
 <b>Build Scripts</b><br/>
 The build scripts come in 2 flavours, ANT or MAVEN. Please install ANT or MAVEN in your deployment machine before running the scripts.<br/>
@@ -47,7 +49,7 @@ The build scripts come in 2 flavours, ANT or MAVEN. Please install ANT or MAVEN 
 
 <b>Resource Folder</b><br/>
 The res folder contains 2 other sub folders,<br/>
-- jquery folder which is meant for beautifying the TestNG's report using ReportNG and lightbox JS.
+- jquery folder contains neccessary files to enhance TestNG's report using ReportNG, jquery and lightbox JS.
 - webdriver folder contains web drivers for different web browsers. They are generally used by Selenium library to interface between the actual browser.
 
 # Deploying Build Scripts in Jenkins
