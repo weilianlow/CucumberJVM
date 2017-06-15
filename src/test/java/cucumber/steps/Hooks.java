@@ -1,19 +1,20 @@
 package test.java.cucumber.steps;
 import cucumber.api.java.Before;
+import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import java.util.concurrent.TimeUnit;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriverException;
+
 import test.java.automationframework.GenericWebDriverFactory;
 
 public class Hooks {
-	//public static WebDriver WD;
 	BaseUtil base;
-	
 	public Hooks(BaseUtil base){
 		this.base = base;
 	}
-	
-	
+
 	@Before("@seleniumchrome")
 	public void seleniumchrome(){
 		base.WD = new GenericWebDriverFactory("chrome").getWebDriver();
@@ -29,7 +30,13 @@ public class Hooks {
 	}
 	
 	@After("@seleniumchrome,@seleniumie")
-	public void seleniumteardown(){
+	public void seleniumteardown(Scenario scenario){
+		try{
+			byte[] screenshot = ((TakesScreenshot)base.WD).getScreenshotAs(OutputType.BYTES);
+			scenario.embed(screenshot, "image/png");
+		}catch(WebDriverException e){
+			System.err.println(e.getMessage());
+		}
 		base.WD.quit();
 	}
 }
