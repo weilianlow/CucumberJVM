@@ -6,13 +6,13 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class) 
 @CucumberOptions(features="src/test/java/cucumber/features",
+					glue="test.java.cucumber.steps",
 					plugin = {"pretty",
+							"rerun:target/rerun.txt",
 							"json:target/cucumber.json",
 							"html:target/site/cucumber-pretty"},
 					tags ={"@regression"},
-					glue="test.java.cucumber.steps",
+					strict = true,
 					monochrome = true)
 					//dryRun = true
-					//monochrome - Display the console output in a much readable ways
-					//strict - if set to true, this will fail any scenarios with pending steps 
 public class TestSuite {}
