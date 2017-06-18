@@ -14,26 +14,21 @@ public class Hooks {
 	public Hooks(BaseUtil base){
 		this.base = base;
 	}
-	public void scenarioInit(Scenario scenario){
-		base.scenario = scenario;
-	}
 	@Before
 	public void before(Scenario scenario){
-		scenarioInit(scenario);
+		base.scenario = scenario;
 	}
 	@Before("@seleniumchrome")
 	public void seleniumchrome(Scenario scenario){
 		base.WD = new GenericWebDriverFactory("chrome").getWebDriver();
 		base.WD.manage().window().maximize();
 		base.WD.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
-		scenarioInit(scenario);
 	}
 	@Before("@seleniumie")
 	public void seleniumie(Scenario scenario){
 		base.WD = new GenericWebDriverFactory("ie").getWebDriver();
 		base.WD.manage().window().maximize();
 		base.WD.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
-		scenarioInit(scenario);
 	}
 	@After("@seleniumchrome,@seleniumie")
 	public void seleniumteardown(){
