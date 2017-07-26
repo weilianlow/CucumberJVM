@@ -11,7 +11,7 @@ public class SearchForm {
 	}
 	
 	public static WebElement buttonSearch(WebDriver WD){
-		return WD.findElement(By.xpath("//button[@name='btnG']"));
+		return WD.findElement(By.xpath("//input[@class='lsb'][1]"));
 	}
 	
 	public static WebElement inputQ(WebDriver WD){
