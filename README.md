@@ -14,15 +14,8 @@ SeleniumDemo is a project that is dedicated to demostrate continuous integration
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;test.java.junittestcases<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;test.java.pageobjects<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;test.java.testngtestcases<br/>
-&nbsp;&nbsp;&nbsp;<b>lib</b><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cucumber<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;junit<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reportng<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;selenium-java<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;testng<br/>
-&nbsp;&nbsp;&nbsp;<b>res</b><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jquery<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;webdriver<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;test.resources.jquery<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;test.resources.webdriver<br/>
 &nbsp;&nbsp;&nbsp;Build-cucumber.xml<br/>
 &nbsp;&nbsp;&nbsp;Build-junit.xml<br/>
 &nbsp;&nbsp;&nbsp;Build-testng.xml<br/>
